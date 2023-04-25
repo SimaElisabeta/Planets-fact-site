@@ -1,0 +1,57 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/main_style.css' %}">
+
+    <title>
+        {% block title %}
+        Home - The Planets
+        {% endblock %}
+    </title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+
+<body id="bg-body">
+
+<nav>
+    <div class="topnav">
+        <div class="nav-left">
+            <a href="{% url 'planets_app:home' %}">The planets</a>
+            <a href="{% url 'planets_app:compare_planets' %}">Compare planets</a>
+        </div>
+
+        <div class="nav-right">
+            <a href="{% url 'planets_app:planet_detail' planet_name='Mercury' planet_section=1 %}">Mercury</a>
+            <a href="{% url 'planets_app:planet_detail' planet_name='Venus' planet_section=1 %}">Venus</a>
+            <a href="{% url 'planets_app:planet_detail' planet_name='Earth' planet_section=1 %}">Earth</a>
+            <a href="{% url 'planets_app:planet_detail' planet_name='Mars' planet_section=1 %}">Mars</a>
+            <a href="{% url 'planets_app:planet_detail' planet_name='Jupiter' planet_section=1 %}">Jupiter</a>
+            <a href="{% url 'planets_app:planet_detail' planet_name='Saturn' planet_section=1 %}">Saturn</a>
+            <a href="{% url 'planets_app:planet_detail' planet_name='Uranus' planet_section=1 %}">Uranus</a>
+            <a href="{% url 'planets_app:planet_detail' planet_name='Neptune' planet_section=1 %}">Neptune</a>
+
+        </div>
+    </div>
+</nav>
+
+
+<div class="container">
+    {% block body_block %}
+    <!-- Anything outside base.html file will be inherited and displayed here usign special template tag {% comment %} {% extends "planets_app/base.html" %} {% endcomment %} -->
+    {% endblock %}
+</div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=League+Spartan:wght@300;700&display=swap');
+
+/* variable names for root colors */
+:root{
+--white: #FFFFFF;
+--black: #070724;
+--gray-dark: #38384F;
+--gray-light: #838391;
+--mercury: #419EBB;
+--venus: #EDA249;
+--earth: #6f2ed6;
+--mars: #D14C32;
+--jupiter: #D83A34;
+--saturn: #CD5120;
+--uranus: #1ec2a4;
+--neptune: #2d68f0;
+}
+
+h1 {
+  font-family: 'Antonio', sans-serif;
+  font-weight: 500 !important;
+  font-size: 80px !important;
+  line-height: 103px !important;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: 'Antonio', sans-serif;
+  font-weight: 500 !important;
+  font-size: 40px !important;
+  line-height: 52px !important;
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 700 !important;
+  font-size: 12px !important;
+  line-height: 25px !important;
+  letter-spacing: 2.6px;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 700 !important;
+  font-size: 11px !important;
+  line-height: 25px !important;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gray-light);
+}
+
+p {
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 25px;
+}
+
+.p-source {
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 25px;
+  color: var(--gray-light);
+}
+
+.p-source a {
+  font-weight:bold;
+  color: var(--gray-light) !important;
+}
+
+
+nav {
+  display:block;
+  padding: 20px;
+  border-bottom: 2px solid var(--gray-dark);
+}
+
+.topnav {
+  display: flex;
+  height: 50px;
+}
+
+.nav-left {
+  display: flex;
+  width: 20%;
+  height: 100%;
+}
+
+.nav-right {
+  display: flex;
+  justify-content: flex-end;
+  width: 80%;
+  height: 100%;
+}
+
+.nav-left a {
+  padding: 0 15px;
+  text-decoration: none;
+  font-family: 'Antonio', sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 52px;
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
+  color: var(--white) !important;
+  align-self: center;
+  opacity: 1 !important;
+}
+
+.nav-right a{
+  padding: 0 20px;
+  text-decoration: none;
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 25px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--white) !important;
+  opacity: 0.7 !important;
+  align-self: center;
+}
+
+
+.nav-right a:hover {
+  color: var(--white);
+  opacity: 1 !important;
+}
+
+/* Mercury active */
+.nav-right a:hover[href*="Mercury"] {
+  border-top: 2px solid var(--mercury);
+}
+
+/* Venus active */
+.nav-right a:hover[href*="Venus"] {
+  border-top: 2px solid var(--venus);
+}
+
+/* Earth active */
+.nav-right a:hover[href*="Earth"] {
+  border-top: 2px solid var(--earth);
+}
+
+/* Mars active */
+.nav-right a:hover[href*="Mars"] {
+  border-top: 2px solid var(--mars);
+}
+
+/* Jupiter active */
+.nav-right a:hover[href*="Jupiter"] {
+  border-top: 2px solid var(--jupiter);
+}
+
+/* Saturn active */
+.nav-right a:hover[href*="Saturn"] {
+  border-top: 2px solid var(--saturn);
+}
+
+/* Uranus active */
+.nav-right a:hover[href*="Uranus"] {
+  border-top: 2px solid var(--uranus);
+}
+
+/* Neptune active */
+.nav-right a:hover[href*="Neptune"] {
+  border-top: 2px solid var(--neptune);
+}
+
+
+.nav-left a:hover {
+  color: var(--mercury) !important;
+}
+
+
+
+.img-bottom {
+  text-align: center;
+}
+
+.img-top {
+  position: absolute;
+  z-index: 1;
+  top: 44%;
+  left: 33.7%;
+}
+
+
+/* nav pill item on hover */
+.nav-item a:hover{
+  background-color: var(--gray-dark); /* add the color of hover pill*/
+  color: var(--white); /* add the text color of the hover pill */
+}
+
+
+.nav-link-custom {
+  margin: 5px 0px 5px -2px; /* add margin for each pill */
+  border: 2px solid var(--gray-dark); /* color and border for each nav pill */
+  display: block;
+  padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+  text-decoration: none;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+
+/* nav pill item on active */
+.nav-link-custom.active {
+  color: var(--white);
+
+}
+
+/* Mercury active */
+.nav-link-custom.active[href*="Mercury"] {
+  background-color: var(--mercury) !important;
+  border: 2px solid var(--mercury);
+}
+
+/* Venus active */
+.nav-link-custom.active[href*="Venus"] {
+  background-color: var(--venus) !important;
+  border: 2px solid var(--venus);
+}
+
+/* Earth active */
+.nav-link-custom.active[href*="Earth"] {
+  background-color: var(--earth) !important;
+  border: 2px solid var(--earth);
+}
+
+/* Mars active */
+.nav-link-custom.active[href*="Mars"] {
+  background-color: var(--mars) !important;
+  border: 2px solid var(--mars);
+}
+
+/* Jupiter active */
+.nav-link-custom.active[href*="Jupiter"] {
+  background-color: var(--jupiter) !important;
+  border: 2px solid var(--jupiter);
+}
+
+/* Saturn active */
+.nav-link-custom.active[href*="Saturn"] {
+  background-color: var(--saturn) !important;
+  border: 2px solid var(--saturn);
+}
+
+/* Uranus active */
+.nav-link-custom.active[href*="Uranus"] {
+  background-color: var(--uranus) !important;
+  border: 2px solid var(--uranus);
+}
+
+/* Neptune active */
+.nav-link-custom.active[href*="Neptune"] {
+  background-color: var(--neptune) !important;
+  border: 2px solid var(--neptune);
+}
+
+
+/* a link-text color for nav pills */
+.nav li a:link, a:visited {
+  color: var(--white);
+  opacity: 0.9;
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 300 !important;
+  font-size: 12px !important;
+  line-height: 25px !important;
+  letter-spacing: 2.6px;
+  text-transform: uppercase;
+}
+
+
+span {
+  font-weight:bold;
+  padding: inherit;
+}
+
+
+
+.col-border {
+  border: 2px solid var(--gray-dark);
+  margin: 2.8%;
+  padding: 10px;
+  text-align: left !important;
+}
+
+.column {
+  flex: 2;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid black;
+}
+
+.p-center{
+  text-align: center;
+}
+
+.col {
+  text-align: center;
+}
+
+
+.img-animation:hover {
+  transform: scale(1.1);
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Mercury active */
+.img-animation:hover h4[id="Mercury"] {
+  color: var(--mercury) !important;
+}
+
+/* Venus active */
+.img-animation:hover h4[id="Venus"] {
+  color: var(--venus) !important;
+}
+
+/* Earth active */
+.img-animation:hover h4[id="Earth"] {
+  color: var(--earth) !important;
+}
+
+/* Mars active */
+.img-animation:hover h4[id="Mars"] {
+  color: var(--mars) !important;
+}
+
+/* Jupiter active */
+.img-animation:hover h4[id="Jupiter"] {
+  color: var(--jupiter) !important;
+}
+
+/* Saturn active */
+.img-animation:hover h4[id="Saturn"] {
+  color: var(--saturn) !important;
+}
+
+/* Uranus active */
+.img-animation:hover h4[id="Uranus"] {
+  color: var(--uranus) !important;
+}
+
+/* Neptune active */
+.img-animation:hover h4[id="Neptune"] {
+  color: var(--neptune) !important;
+}
+
+
+.form-select {
+  background-color: var(--mercury) !important;
+  border: none !important;
+  color: var(--white) !important;
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 700 !important;
+  font-size: 18px !important;
+  line-height: 25px !important;
+  letter-spacing: 2.6px;
+  text-transform: uppercase;
+  border-radius: 0rem !important;
+}
+
+button {
+  background-color: var(--mercury) !important;
+  border: none !important;
+  color: var(--white) !important;
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 700 !important;
+  font-size: 18px !important;
+  line-height: 25px !important;
+  letter-spacing: 2.6px;
+  text-transform: uppercase;
+  border-radius: none !important;
+  padding: 0.375rem 2.25rem 0.375rem 2.25rem;
+}
+
+.border-bt {
+  border-bottom: 2px solid var(--gray-dark);
+}
+
+.align-bottom p, h4, h3, h2 {
+  text-align: center !important;
+  margin-bottom: 0 !important;
+}
+
+
+#bg-body {
+  background: url('images/background-stars.svg'), var(--black);
+  font-family: verdana;
+  color: var(--white);
+}
+
+

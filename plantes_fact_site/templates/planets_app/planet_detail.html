@@ -1,0 +1,103 @@
+<!-- EXTENDS planets_app/base.html -->
+{% extends "planets_app/base.html" %}
+
+<!-- LOAD STATIC -->
+{% load static %}
+
+<!-- GET TITLE -->
+{% block title %}
+    {{planet.name}} - The Planet
+{% endblock %}
+
+
+<!-- PLANET DETAILS CONTENT -->
+{% block body_block %}
+
+
+    <div class="container-fluid row p-5">
+        <!-- Col left-->
+        <div class="col-lg-7" style="text-align:center">
+            <!-- Tab panes img-->
+            <div class="tab-content">
+                <div id="target1-img" class="container tab-pane{% if active_section == '1' %} active {% endif %}"><br>
+                    <img alt="{{ planet.name }} Overview" title="{{ planet.name }} Overview" src="{{ planet.planet_image.url }}" width="400">
+                </div>
+                <div id="target2-img" class="container tab-pane fade{% if active_section == '2' %} active show {% endif %}"><br>
+                    <img alt="{{ planet.name }} Internal" title="{{ planet.name }} Internal" src="{{ planet.internal_image.url }}" width="400">
+                </div>
+                <div id="target3-img" class="container tab-pane fade{% if active_section == '3' %} active show {% endif %}"><br>
+                    <div class="img-bottom">
+                        <img alt="{{ planet.name }} Overview" title="{{ planet.name }} Overview" src="{{ planet.planet_image.url }}" width="400">
+                    </div>
+                    <div class="img-top">
+                        <img alt="{{ planet.name }} Surface" title="{{ planet.name }} Surface" src="{{ planet.geology_image.url }}" width="100">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Col right-->
+        <div class="col-lg-4">
+
+            <div style="height:330px">
+                <!-- Tab panes text-->
+                <div class="tab-content h-50">
+                    <h1>{{ planet.name }}</h1>
+                    <div id="target1" class="tab-pane{% if active_section == '1' %} active {% endif %}"><br>
+                        <p style="height:120px">{{ planet.overview }}</p>
+                        <p class="p-source">Source: <a href="{{ planet.overview_source }}">Wikipedia</a></p>
+                    </div>
+                    <div id="target2" class="tab-pane fade{% if active_section == '2' %} active show {% endif %}"><br>
+                        <p style="height:120px">{{ planet.structure }}</p>
+                        <p class="p-source">Source: <a href="{{ planet.structure_source }}">Wikipedia</a></p>
+                    </div>
+                    <div id="target3" class="tab-pane fade{% if active_section == '3' %} active show {% endif %}"><br>
+                        <p style="height:120px">{{ planet.geology }}</p>
+                        <p class="p-source">Source: <a href="{{ planet.geology_source }}">Wikipedia</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nav pills -->
+            <ul class="nav nav-pills flex-column col-12" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link-custom {% if active_section == '1' %} active {% endif %}" href="{% url 'planets_app:planet_detail' planet_name=active_planet planet_section=1 %}">01 <span> Overview</span> </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link-custom {% if active_section == '2' %} active {% endif %}" href="{% url 'planets_app:planet_detail' planet_name=active_planet planet_section=2 %}">02 <span> Internal structure</span> </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link-custom {% if active_section == '3' %} active {% endif %}" href="{% url 'planets_app:planet_detail' planet_name=active_planet planet_section=3 %}">03 <span> Surface geology</span> </a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+
+    <!-- Footer-->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-sm-2 col-border">
+                <h4>Rotation time</h4>
+                <h2>{{ planet.rotation }}</h2>
+            </div>
+
+            <div class="col-sm-2 col-border">
+                <h4>Revolution time</h4>
+                <h2>{{ planet.revolution }}</h2>
+            </div>
+
+            <div class="col-sm-2 col-border">
+                <h4>Radius</h4>
+                <h2>{{ planet.radius }}</h2>
+            </div>
+
+             <div class="col-sm-2 col-border">
+                <h4>Average temp.</h4>
+                <h2>{{ planet.temperature }}</h2>
+             </div>
+        </div>
+    </div>
+{% endblock %}

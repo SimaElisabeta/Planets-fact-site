@@ -1,0 +1,186 @@
+<!-- EXTENDS planets_app/base.html -->
+{% extends "planets_app/base.html" %}
+
+<!-- LOAD STATIC -->
+{% load static %}
+
+<!-- TITLE -->
+{% block title %}
+    Compare - The Planets
+{% endblock %}
+
+<!-- COMPARE PLANETS CONTENT -->
+{% block body_block %}
+
+<form method="post">
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-sm-6">
+                <select name="planet1" class="form-select">
+                    <option value="">Select planet 1</option>
+                    {% for planet_name in planet_names %}
+                    <option value="{{ planet_name }}" {% if planet1_name == planet_name %}selected{% endif %}>{{ planet_name }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="col-sm-6">
+                <select name="planet2" class="form-select">
+                    <option value=""> Select planet 2 </option>
+                    {% for planet_name in planet_names %}
+                    <option value="{{ planet_name }}" {% if planet2_name == planet_name %}selected{% endif %}>{{ planet_name }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+        <div class="row mt-3 mb-2 ">
+            <div class="col-sm-12 d-flex justify-content-center">
+                {% csrf_token %}
+                <button type="submit">Compare</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+{% if planet1_data and planet2_data and planet1_model and planet2_model %}
+    <div class="container">
+
+    <!--    IMG row-->
+        <div class="row mb-4">
+            <div class="col-lg-5 col-sm-12 left">
+                <div class="img-bottom ">
+                    <img alt="Overview" title="Overview" src="{{ planet1_model.planet_image.url }}" width="400">
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-sm-2 center">
+
+            </div>
+
+            <div class="col-lg-5 col-sm-12 right">
+                <div class="img-bottom">
+                    <img alt="Overview" title="Overview" src="{{ planet2_model.planet_image.url }}" width="400">
+                </div>
+            </div>
+        </div>
+
+    <!--compare rows-->
+        <div class="row align-bottom mb-3">
+            <div class="col-lg-5 col-sm-6 left">
+                <h2>{{ planet1_data.name }}</h2>
+            </div>
+            <div class="col-lg-2 col-sm-2 center ">
+                <h3>VS</h3>
+            </div>
+            <div class="col-lg-5 col-sm-6 right ">
+                <h2>{{ planet2_data.name }}</h2>
+            </div>
+        </div>
+
+        <div class="row border-bt align-bottom mt-2 ">
+            <div class="col-lg-5 col-sm-6 left">
+                <p>{{ planet1_data.mass }}</p>
+            </div>
+            <div class="col-lg-2 col-sm-2 center ">
+                <h4>mass</h4>
+            </div>
+            <div class="col-lg-5 col-sm-6 right ">
+                <p>{{ planet2_data.mass }}</p>
+            </div>
+        </div>
+
+        <div class="row border-bt align-bottom mt-2 ">
+            <div class="col-lg-5 col-sm-6 left">
+                <p>{{ planet1_data.radius }}</p>
+            </div>
+            <div class="col-lg-2 col-sm-2 center ">
+                <h4>radius</h4>
+            </div>
+            <div class="col-lg-5 col-sm-6 right ">
+                <p>{{ planet2_data.radius }}</p>
+            </div>
+        </div>
+
+        <div class="row border-bt align-bottom mt-2 ">
+            <div class="col-lg-5 col-sm-6 left">
+                <p>{{ planet1_data.period }}</p>
+            </div>
+            <div class="col-lg-2 col-sm-2 center ">
+                <h4>period</h4>
+            </div>
+            <div class="col-lg-5 col-sm-6 right ">
+                <p>{{ planet2_data.period }}</p>
+            </div>
+        </div>
+
+        <div class="row border-bt align-bottom mt-2 ">
+            <div class="col-lg-5 col-sm-6 left">
+                <p>{{ planet1_data.semi_major_axis }}</p>
+            </div>
+            <div class="col-lg-2 col-sm-2 center ">
+                <h4>semi major axis</h4>
+            </div>
+            <div class="col-lg-5 col-sm-6 right ">
+                <p>{{ planet2_data.semi_major_axis }}</p>
+            </div>
+        </div>
+
+        <div class="row border-bt align-bottom mt-2 ">
+            <div class="col-lg-5 col-sm-6 left">
+                <p>{{ planet1_data.temperature }}</p>
+            </div>
+            <div class="col-lg-2 col-sm-2 center ">
+                <h4>temperature</h4>
+            </div>
+            <div class="col-lg-5 col-sm-6 right ">
+                <p>{{ planet2_data.temperature }}</p>
+            </div>
+        </div>
+
+        <div class="row border-bt align-bottom mt-2 ">
+            <div class="col-lg-5 col-sm-6 left">
+                <p>{{ planet1_data.distance_light_year }}</p>
+            </div>
+            <div class="col-lg-2 col-sm-2 center ">
+                <h4>distance light year</h4>
+            </div>
+            <div class="col-lg-5 col-sm-6 right ">
+                <p>{{ planet2_data.distance_light_year }}</p>
+            </div>
+        </div>
+
+        <div class="row border-bt align-bottom mt-2 ">
+            <div class="col-lg-5 col-sm-6 left">
+                <p>{{ planet1_data.host_star_mass }}</p>
+            </div>
+            <div class="col-lg-2 col-sm-2 center ">
+                <h4>host star mass</h4>
+            </div>
+            <div class="col-lg-5 col-sm-6 right ">
+                <p>{{ planet2_data.host_star_mass }}</p>
+            </div>
+        </div>
+
+        <div class="row border-bt align-bottom mt-2 ">
+            <div class="col-lg-5 col-sm-6 left">
+                <p>{{ planet1_data.host_star_temperature }}</p>
+            </div>
+            <div class="col-lg-2 col-sm-2 center ">
+                <h4>host star temperature</h4>
+            </div>
+            <div class="col-lg-5 col-sm-6 right ">
+                <p>{{ planet2_data.host_star_temperature }}</p>
+            </div>
+        </div>
+
+
+    </div>
+{% else %}
+    <h3>Please select both planets</h3>
+{% endif %}
+
+{% endblock %}

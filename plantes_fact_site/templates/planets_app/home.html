@@ -1,0 +1,25 @@
+<!-- EXTENDS planets_app/base.html -->
+{% extends "planets_app/base.html" %}
+
+<!-- LOAD STATIC -->
+{% load static %}
+
+<!-- HOME CONTENT -->
+{% block body_block %}
+
+{% if planets %}
+<div class="row">
+    {% for planet in planets %}
+    <div class="col mt-5">
+        <div class="card-body m-5 img-animation">
+            <a href="{% url 'planets_app:planet_detail' planet_name=planet.name planet_section=1 %}">
+                <img class="m-3 " alt="Overview" src="{{ planet.planet_image.url }}" width="150">
+            </a>
+            <h4 class="p-center" id="{{planet.name}}">{{planet.name}}</h4>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+{% endblock %}
