@@ -386,6 +386,21 @@ button {
   margin-bottom: 0 !important;
 }
 
+.planet-details-h-body h3 {
+  text-align: left !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.planet-details-h-footer h4{
+  text-align: left !important;
+  margin-bottom: 0 !important;
+}
+
+.planet-details-h-footer h2 {
+  text-align: left !important;
+  margin-bottom: 0 !important;
+}
+
 
 #bg-body {
   background: url('images/background-stars.svg'), var(--black);
