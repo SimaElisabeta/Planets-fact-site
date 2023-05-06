@@ -52,6 +52,8 @@ h4 {
   color: var(--gray-light);
 }
 
+
+/* styling paragraph */
 p {
   font-family: 'League Spartan', sans-serif;
   font-weight: 300;
@@ -73,6 +75,8 @@ p {
 }
 
 
+
+/* top nav bar */
 nav {
   display:block;
   padding: 20px;
@@ -125,7 +129,6 @@ nav {
   align-self: center;
 }
 
-
 .nav-right a:hover {
   color: var(--white);
   opacity: 1 !important;
@@ -171,23 +174,29 @@ nav {
   border-top: 2px solid var(--neptune);
 }
 
-
 .nav-left a:hover {
   color: var(--mercury) !important;
 }
 
 
-
-.img-bottom {
-  text-align: center;
+/* planet img display */
+.container-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.img-top {
+.main-image {
+  position: relative;
+}
+
+.offset-image {
   position: absolute;
-  z-index: 1;
-  top: 44%;
-  left: 33.7%;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
 }
+
 
 
 /* nav pill item on hover */
@@ -195,7 +204,6 @@ nav {
   background-color: var(--gray-dark); /* add the color of hover pill*/
   color: var(--white); /* add the text color of the hover pill */
 }
-
 
 .nav-link-custom {
   margin: 5px 0px 5px -2px; /* add margin for each pill */
@@ -209,7 +217,6 @@ nav {
 /* nav pill item on active */
 .nav-link-custom.active {
   color: var(--white);
-
 }
 
 /* Mercury active */

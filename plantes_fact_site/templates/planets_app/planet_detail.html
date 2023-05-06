@@ -27,14 +27,11 @@
                 <img alt="{{ planet.name }} Internal" title="{{ planet.name }} Internal"
                      src="{{ planet.internal_image.url }}" width="400">
             </div>
-            <div id="target3-img"
-                 class="container tab-pane fade{% if active_section == '3' %} active show {% endif %}"><br>
-                <div class="img-bottom">
+            <div id="target3-img" class="container-img tab-pane fade{% if active_section == '3' %} active show {% endif %}"><br>
+                <div class="main-image">
                     <img alt="{{ planet.name }} Overview" title="{{ planet.name }} Overview"
                          src="{{ planet.planet_image.url }}" width="400">
-                </div>
-                <div class="img-top">
-                    <img alt="{{ planet.name }} Surface" title="{{ planet.name }} Surface"
+                    <img class="offset-image" alt="{{ planet.name }} Surface" title="{{ planet.name }} Surface"
                          src="{{ planet.geology_image.url }}" width="100">
                 </div>
             </div>
@@ -67,7 +64,7 @@
                         </svg>
                     </p>
                 </div>
-                <div id="target2" class="tab-pane fade{% if active_section == '2' %} active show {% endif %}"><br>
+                <div id="target2" class="tab-pane fade{% if active_section == '2' %} active show {% endif %}">
                     <p style="height:120px">{{ planet.structure }}</p>
                     <p class="p-source">Source:
                         <a href="{{ planet.structure_source }}">Wikipedia</a>
@@ -77,7 +74,7 @@
                         </svg>
                     </p>
                 </div>
-                <div id="target3" class="tab-pane fade{% if active_section == '3' %} active show {% endif %}"><br>
+                <div id="target3" class="tab-pane fade{% if active_section == '3' %} active show {% endif %}">
                     <p style="height:120px">{{ planet.geology }}</p>
                     <p class="p-source">Source:
                         <a href="{{ planet.geology_source }}">Wikipedia</a>
