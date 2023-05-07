@@ -4,6 +4,3 @@ __pycache__/
 *.pyc
 *.pyo
 *.egg-info/
-
-# API key used for api-ninjas.com
-plantes_fact_site/static/secrets/api_key.txt

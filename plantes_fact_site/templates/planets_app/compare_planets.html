@@ -52,7 +52,7 @@
     <!--    IMG row-->
         <div class="row mb-4">
             <div class="col-lg-5 col-sm-12 left">
-                <div class="img-bottom ">
+                <div class="container-img ">
                     <img alt="Overview" title="Overview" src="{{ planet1_model.planet_image.url }}" width="400">
                 </div>
             </div>
@@ -62,13 +62,14 @@
             </div>
 
             <div class="col-lg-5 col-sm-12 right">
-                <div class="img-bottom">
+                <div class="container-img">
                     <img alt="Overview" title="Overview" src="{{ planet2_model.planet_image.url }}" width="400">
                 </div>
             </div>
         </div>
 
     <!--compare rows-->
+
         <div class="row mb-3">
             <div class="col-lg-5 col-sm-6 left align-bottom ">
                 <h2>{{ planet1_data.name }}</h2>
@@ -81,103 +82,109 @@
             </div>
         </div>
 
-        <div class="row border-bt align-bottom mt-2 ">
-            <div class="col-lg-5 col-sm-6 left">
-                <p>{{ planet1_data.mass }}</p>
-            </div>
-            <div class="col-lg-2 col-sm-2 center ">
-                <h4>mass</h4>
-            </div>
-            <div class="col-lg-5 col-sm-6 right ">
-                <p>{{ planet2_data.mass }}</p>
-            </div>
-        </div>
 
         <div class="row border-bt align-bottom mt-2 ">
             <div class="col-lg-5 col-sm-6 left">
-                <p>{{ planet1_data.radius }}</p>
+                <p>{{ planet1_data.radius }} km</p>
             </div>
             <div class="col-lg-2 col-sm-2 center ">
                 <h4>radius</h4>
             </div>
             <div class="col-lg-5 col-sm-6 right ">
-                <p>{{ planet2_data.radius }}</p>
+                <p>{{ planet2_data.radius }} km</p>
             </div>
         </div>
 
+
         <div class="row border-bt align-bottom mt-2 ">
             <div class="col-lg-5 col-sm-6 left">
-                <p>{{ planet1_data.period }}</p>
+                <p>{{ planet1_data.distance_sun }} AU</p>
             </div>
             <div class="col-lg-2 col-sm-2 center ">
-                <h4>period</h4>
+                <h4>Distance from Sun </h4>
             </div>
             <div class="col-lg-5 col-sm-6 right ">
-                <p>{{ planet2_data.period }}</p>
+                <p>{{ planet2_data.distance_sun }} AU</p>
             </div>
         </div>
 
+
         <div class="row border-bt align-bottom mt-2 ">
             <div class="col-lg-5 col-sm-6 left">
-                <p>{{ planet1_data.semi_major_axis }}</p>
+                <p>{{ planet1_data.mass }} kg</p>
             </div>
             <div class="col-lg-2 col-sm-2 center ">
-                <h4>semi major axis</h4>
+                <h4>Mass</h4>
             </div>
             <div class="col-lg-5 col-sm-6 right ">
-                <p>{{ planet2_data.semi_major_axis }}</p>
+                <p>{{ planet2_data.mass }} kg</p>
             </div>
         </div>
 
+
         <div class="row border-bt align-bottom mt-2 ">
             <div class="col-lg-5 col-sm-6 left">
-                <p>{{ planet1_data.temperature }}</p>
+                <p>{{ planet1_data.gravity }} m/s<sup>2</sup></p>
+            </div>
+            <div class="col-lg-2 col-sm-2 center ">
+                <h4>Gravity</h4>
+            </div>
+            <div class="col-lg-5 col-sm-6 right ">
+                <p>{{ planet2_data.gravity }} m/s<sup>2</sup></p>
+            </div>
+        </div>
+
+
+        <div class="row border-bt align-bottom mt-2 ">
+            <div class="col-lg-5 col-sm-6 left">
+                <p>{{ planet1_data.moons_num }}</p>
+            </div>
+            <div class="col-lg-2 col-sm-2 center ">
+                <h4>Number of Satellites</h4>
+            </div>
+            <div class="col-lg-5 col-sm-6 right ">
+                <p>{{ planet2_data.moons_num }}</p>
+            </div>
+        </div>
+
+
+        <div class="row border-bt align-bottom mt-2 ">
+            <div class="col-lg-5 col-sm-6 left">
+                <p>{{ planet1_data.rotation }} hours</p>
+            </div>
+            <div class="col-lg-2 col-sm-2 center ">
+                <h4>Length of day</h4>
+            </div>
+            <div class="col-lg-5 col-sm-6 right ">
+                <p>{{ planet2_data.rotation }} hours</p>
+            </div>
+        </div>
+
+
+        <div class="row border-bt align-bottom mt-2 ">
+            <div class="col-lg-5 col-sm-6 left">
+                <p>{{ planet1_data.revolution }} days</p>
+            </div>
+            <div class="col-lg-2 col-sm-2 center ">
+                <h4>Length of year</h4>
+            </div>
+            <div class="col-lg-5 col-sm-6 right ">
+                <p>{{ planet2_data.revolution }} days</p>
+            </div>
+        </div>
+
+
+        <div class="row border-bt align-bottom mt-2 ">
+            <div class="col-lg-5 col-sm-6 left">
+                <p>{{ planet1_data.temperature }} &deg;C</p>
             </div>
             <div class="col-lg-2 col-sm-2 center ">
                 <h4>temperature</h4>
             </div>
             <div class="col-lg-5 col-sm-6 right ">
-                <p>{{ planet2_data.temperature }}</p>
+                <p>{{ planet2_data.temperature }} &deg;C</p>
             </div>
         </div>
-
-        <div class="row border-bt align-bottom mt-2 ">
-            <div class="col-lg-5 col-sm-6 left">
-                <p>{{ planet1_data.distance_light_year }}</p>
-            </div>
-            <div class="col-lg-2 col-sm-2 center ">
-                <h4>distance light year</h4>
-            </div>
-            <div class="col-lg-5 col-sm-6 right ">
-                <p>{{ planet2_data.distance_light_year }}</p>
-            </div>
-        </div>
-
-        <div class="row border-bt align-bottom mt-2 ">
-            <div class="col-lg-5 col-sm-6 left">
-                <p>{{ planet1_data.host_star_mass }}</p>
-            </div>
-            <div class="col-lg-2 col-sm-2 center ">
-                <h4>host star mass</h4>
-            </div>
-            <div class="col-lg-5 col-sm-6 right ">
-                <p>{{ planet2_data.host_star_mass }}</p>
-            </div>
-        </div>
-
-        <div class="row border-bt align-bottom mt-2 ">
-            <div class="col-lg-5 col-sm-6 left">
-                <p>{{ planet1_data.host_star_temperature }}</p>
-            </div>
-            <div class="col-lg-2 col-sm-2 center ">
-                <h4>host star temperature</h4>
-            </div>
-            <div class="col-lg-5 col-sm-6 right ">
-                <p>{{ planet2_data.host_star_temperature }}</p>
-            </div>
-        </div>
-
-
     </div>
 {% else %}
     <h3>Please select both planets</h3>
