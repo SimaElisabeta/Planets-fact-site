@@ -168,3 +168,8 @@ def api_planet(request):
             planets_data.append(planet_dict)
 
     return JsonResponse(planets_data, safe=False, json_dumps_params={'indent': 1})
+
+
+# api help page under construction
+def api_help(request):
+    return render(request, 'planets_app/api_help.html')
