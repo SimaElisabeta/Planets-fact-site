@@ -92,6 +92,48 @@ def planet_detail(request, planet_name, planet_section):
 
 
 def compare_planets(request):
+    """"
+    * hotfix for PythonAnywhere
+    * while the server is processing a request, it cannot make another request
+    * in order to fix this we simply call the functions to get the planet data directly without starting a new
+    request for an API call
+    * when deploying to a different web server, this hotfix may not be needed and could be reverted
+    """
+
+    # uncomment to use api to compare
+    # return compare_planets_api(request)
+
+    # use local data to compare
+    return compare_planets_local(request)
+
+
+def compare_planets_local(request):
+    planet1_name = request.POST.get('planet1')
+    planet2_name = request.POST.get('planet2')
+
+    planet1_data = None
+    planet2_data = None
+    planet1_model = None
+    planet2_model = None
+
+    if planet1_name and planet2_name:
+        planet1_data = create_planet_dict(planet1_name)
+        planet2_data = create_planet_dict(planet2_name)
+
+        planet1_model = get_object_or_404(Planet, name=planet1_name)
+        planet2_model = get_object_or_404(Planet, name=planet2_name)
+
+    return render(request, 'planets_app/compare_planets.html', {'planet_names': planet_names,
+                                                                'planet1_name': planet1_name,
+                                                                'planet2_name': planet2_name,
+                                                                'planet1_data': planet1_data,
+                                                                'planet2_data': planet2_data,
+                                                                'planet1_model': planet1_model,
+                                                                'planet2_model': planet2_model,
+                                                                })
+
+
+def compare_planets_api(request):
     planet1_name = request.POST.get('planet1')
     planet2_name = request.POST.get('planet2')
 
