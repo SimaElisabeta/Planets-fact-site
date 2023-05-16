@@ -41,12 +41,13 @@ with the assistance of [Frontend Mentor's](https://www.frontendmentor.io/challen
 ### Features
 
 - I used **_Django_** package to develop my application. Django is a high-level Python web framework that follows 
-the Model-View-Controller (MVC) architectural pattern. It provides a set of tools and libraries that simplify 
-the development of web applications.
-- For implementing my REST API, I made use of Django's **_JsonResponse_** class. This class facilitated the creation of 
+the Model-View-Template (MVT) architectural pattern. It provides a set of tools and libraries that simplify 
+the development of web applications. Working with Django for this project was a pleasant experience as the MTV 
+structure helped me organize my project effectively and understand each step clearly.
+- For implementing my REST API, I used Django's **_JsonResponse_** class. This class facilitated the creation of 
 HTTP responses containing JSON-formatted payloads. By utilizing this class, Python data structures like dictionaries 
 and lists were automatically serialized into JSON format. To test the functionality of my REST API, you can navigate to
-either the `/api/` or `api/v1/planets/` URL. Please note that the `/api/` help-page is currently under construction.
+either the `api/` or `api/v1/planets/` URL. Please note that the `api/` help-page is currently under construction.
 In the future it will provide instructions on how to utilize the API effectively.
 
 
